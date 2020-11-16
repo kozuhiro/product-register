@@ -1,11 +1,7 @@
-sudo: required
+language: python
 
-services: docker
-
-before_install: 
-  - docker-compose up --build -d
+python:
+  - "2.7"
 
 script: 
-  - docker-compose exec --env 'RAILS_ENV=test' web rails db:create
-  - docker-compose exec --env 'RAILS_ENV=test' web rails db:migrate
-  - docker-compose exec --env 'RAILS_ENV=test' web rails test
+  - python hello.py
